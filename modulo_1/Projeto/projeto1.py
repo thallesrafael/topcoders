@@ -121,7 +121,11 @@ def menu(dados):
 
     
         if opcao == '1':
-            print(listar_categorias(dados))
+            categorias = listar_categorias(dados)
+
+            # Printando de maneira mais agradável para o usuário
+            for categoria in categorias:
+                print(categoria.upper().replace("_", " "))
 
         elif opcao == '2':
             categoria = pede_categoria(dados)
