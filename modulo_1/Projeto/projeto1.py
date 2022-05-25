@@ -13,10 +13,12 @@ def obter_dados():
 # Valida a escolha da categoria feita pelo usuário
 def pede_categoria(dados):
     categorias = listar_categorias(dados)
-    categoria = input('Escreva uma categoria da qual deseja consultar: ')
+
+    # Tratando a entrada do usuário para que aceite palavras divididas por espaço, minúscula e maiúscula
+    categoria = input('Escreva uma categoria da qual deseja consultar: ').replace(" ", '_').lower()
 
     while categoria not in categorias:
-        categoria = input('Categoria inválida! Escreva uma categoria da qual deseja consultar: ')
+        categoria = input('Categoria inválida! Escreva uma categoria da qual deseja consultar: ').replace(" ", '_')
     return categoria
 
 
@@ -95,16 +97,7 @@ def menu(dados):
 
     # Repete as opções enquanto o usuário não digita a opção de saída
     while opcao != '0':
-        opcao = input("""
-            Menu principal. Por favor, digite a opção que deseja acessar:
-                [1] - Listas as categorias
-                [2] - Listar produtos de uma categoria
-                [3] - Produto mais caro por categoria
-                [4] - Produto mais barato por categoria
-                [5] - Top 10 produtos mais caros
-                [6] - Top 10 produtos mais baratos
-                [0] - Sair
-        """)
+        replace(" ", '_')
         
         # Valida a opção escolhida pelo usuário
         while opcao not in [str(i) for i in range(7)]:
@@ -121,7 +114,7 @@ def menu(dados):
 
     
         if opcao == '1':
-            categorias = listar_categorias(dados)
+            categorias = sorted(listar_categorias(dados))
 
             # Printando de maneira mais agradável para o usuário
             for categoria in categorias:
