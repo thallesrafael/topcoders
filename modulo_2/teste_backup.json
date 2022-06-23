@@ -1,0 +1,80 @@
+{
+    "musicos": [
+        {
+            "nome": "Ana Paula",
+            "email": "paula@gmail.com",
+            "generos": [
+                "Pop",
+                "Samba"
+            ],
+            "instrumentos": [
+                "Guitarra",
+                "Bateria"
+            ]
+        },
+        {
+            "nome": "Ana Clara",
+            "email": "clara@gmail.com",
+            "generos": [
+                "Gospel",
+                "Samba"
+            ],
+            "instrumentos": [
+                "Violao"
+            ]
+        },
+        {
+            "nome": "Pietro Felipe",
+            "email": "pietro@gmail.com",
+            "generos": [
+                "Rock"
+            ],
+            "instrumentos": [
+                "Baixo",
+                "Bateria"
+            ]
+        },
+        {
+            "nome": "Marcelo Hamilton",
+            "email": "marcelo@gmail.com",
+            "generos": [
+                "Gospel"
+            ],
+            "instrumentos": [
+                "Guitarra"
+            ]
+        },
+        {
+            "nome": "Cristina Correia",
+            "email": "cristina@gmail.com",
+            "generos": [
+                "Samba"
+            ],
+            "instrumentos": [
+                "Violao"
+            ]
+        },
+        {
+            "nome": "Claudia Raia",
+            "email": "claudia@hotmail.com",
+            "generos": [
+                "Samba"
+            ],
+            "instrumentos": [
+                "Baixo"
+            ]
+        },
+        {
+            "nome": "Thalles Rafael",
+            "email": "thalles@gmail.com",
+            "generos": [
+                "Pop",
+                "Rock"
+            ],
+            "instrumentos": [
+                "Pandeiro",
+                "Cavaquinho"
+            ]
+        }
+    ]
+}
