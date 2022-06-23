@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[50]:
+
+
 import json
 
 
@@ -21,6 +27,11 @@ class NomeInvalido(Exception):
 
 class ListaVazia(Exception):
     def __init__(self, message='Digite ao menos um item.'):
+        self.message = message
+        super().__init__(self.message)
+        
+class NenhumaBandaFormada(Exception):
+    def __init__(self, message='Não foi possível formar nenhuma banda'):
         self.message = message
         super().__init__(self.message)
 
@@ -72,11 +83,12 @@ def validacoes_gerais(registros: dict) -> dict:
         registros = cadastra_na_base(
             registros, nome, email, generos, instrumentos)
 
-        return registros
 
     except:
         print("Não foi possível concluir o cadastro.\n")
-
+        
+    finally:
+        return registros
 
 def pede_lista(mensagem: str) -> list:
     lista = list()
@@ -270,40 +282,38 @@ def montar_banda(registros: list) -> None:
 
     musicos_encontrados = [gera_lista_filtrada(
         registros, filtro_instrumento=instrumento, filtro_genero=genero_buscado) for instrumento in instrumentos_buscados]
-    musicos_encontrados = [(musico['email'], instrumento)
-                           for lista_instrumento in musicos_encontrados for musico in lista_instrumento for instrumento in musico['instrumentos']]
-
+    musicos_encontrados = list(set([(musico['email'], instrumento)
+                           for lista_instrumento in musicos_encontrados for musico in lista_instrumento for instrumento in musico['instrumentos']]))
+   
     combinacoes = faz_combinacoes(musicos_encontrados, numero_musicos)
-
-    bandas = filtra_combinacoes(
-        combinacoes, numero_musicos, instrumentos_buscados)
-
-    for banda in bandas:
-        print(banda)
+    
+    try:
+        bandas = filtra_combinacoes(combinacoes, numero_musicos, instrumentos_buscados)
+        apresenta_bandas_formadas(bandas)
+        
+    except NenhumaBandaFormada:
+        print('Não foi possível formar nenhuma bandas com os requisitos pedidos.')
 
     return
 
 
-def filtra_combinacoes(combinacoes, elementos, lista_instrumentos):
-    lista = combinacoes
-    for grupo in lista:
-        for i in range(elementos):
-            if grupo[i][1] != lista_instrumentos[i]:
-                lista.remove(grupo)
-                break
+def filtra_combinacoes(combinacoes: list, elementos: int, lista_instrumentos: list) -> list:
+    bandas_formadas = []
+    lista_instrumentos = sorted(lista_instrumentos)
+    for grupo in combinacoes:
+        
+        instrumentos = sorted([instrumento for (email,instrumento) in grupo])
+        emails = set([email for (email,instrumento) in grupo])
+        if instrumentos == lista_instrumentos and len(emails) == elementos:
+            bandas_formadas.append(grupo)
+            
+    if not bandas_formadas:
+        raise NenhumaBandaFormada()
 
-    for banda in lista:
-        confere = set()
-        for musico in banda:
-            confere.add(musico[0])
-
-        if len(confere) < elementos:
-            lista.remove(banda)
-
-    return lista
+    return bandas_formadas
 
 
-def faz_combinacoes(lista, comprimento, lista_aux=[]):
+def faz_combinacoes(lista: list, comprimento: int, lista_aux: list = []) -> list:
 
     if len(lista_aux) == comprimento:
         return [lista_aux]
@@ -315,5 +325,25 @@ def faz_combinacoes(lista, comprimento, lista_aux=[]):
         combinada += faz_combinacoes(lista[i+1:], comprimento, lista_copia)
     return combinada
 
+def apresenta_bandas_formadas(bandas_formadas: list) -> None:
+    print('\n', '-' * 42)
+    for banda in bandas_formadas:
+        for musico in banda:
+            print(f'{musico[1]:<15}:   {musico[0]}')
+        print('-' * 42)
+
 
 menu('teste.json')
+
+
+# In[36]:
+
+
+abenezio@gmail.com
+
+
+# In[ ]:
+
+
+
+

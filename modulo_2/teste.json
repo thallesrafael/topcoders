@@ -5,7 +5,7 @@
             "email": "paula@gmail.com",
             "generos": [
                 "Pop",
-                "Samba"
+                "Rock"
             ],
             "instrumentos": [
                 "Guitarra",
@@ -16,11 +16,12 @@
             "nome": "Ana Clara",
             "email": "clara@gmail.com",
             "generos": [
-                "Gospel",
+                "Rock",
                 "Samba"
             ],
             "instrumentos": [
-                "Violao"
+                "Violao",
+                "Baixo"
             ]
         },
         {
@@ -38,7 +39,7 @@
             "nome": "Marcelo Hamilton",
             "email": "marcelo@gmail.com",
             "generos": [
-                "Gospel"
+                "Rock"
             ],
             "instrumentos": [
                 "Guitarra"
@@ -48,10 +49,10 @@
             "nome": "Cristina Correia",
             "email": "cristina@gmail.com",
             "generos": [
-                "Samba"
+                "Rock"
             ],
             "instrumentos": [
-                "Violao"
+                "Baixo"
             ]
         },
         {
@@ -77,39 +78,25 @@
             ]
         },
         {
-            "nome": "Ane Correia",
-            "email": "ane@gmail.com",
+            "nome": "Abenezio Freitas",
+            "email": "abenezio@gmail.com",
             "generos": [
                 "Rock",
                 "Pop"
             ],
             "instrumentos": [
-                "Guitarra",
-                "Baixo"
+                "Flauta",
+                "Cavaquinho"
             ]
         },
         {
-            "nome": "Rita Chiffoni",
-            "email": "rita@gmail.com",
+            "nome": "Rodrigo Alves",
+            "email": "rodrigo@gmail.com",
             "generos": [
-                "Rock",
-                "Sertanejo"
+                "Funk"
             ],
             "instrumentos": [
-                "Bateria",
-                "Guitarra"
-            ]
-        },
-        {
-            "nome": "Athos Solha",
-            "email": "athos@gmail.com",
-            "generos": [
-                "Rock",
-                "Gospel"
-            ],
-            "instrumentos": [
-                "Bateria",
-                "Baixo"
+                "Arpa"
             ]
         }
     ]

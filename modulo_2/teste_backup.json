@@ -5,7 +5,7 @@
             "email": "paula@gmail.com",
             "generos": [
                 "Pop",
-                "Samba"
+                "Rock"
             ],
             "instrumentos": [
                 "Guitarra",
@@ -16,11 +16,12 @@
             "nome": "Ana Clara",
             "email": "clara@gmail.com",
             "generos": [
-                "Gospel",
+                "Rock",
                 "Samba"
             ],
             "instrumentos": [
-                "Violao"
+                "Violao",
+                "Baixo"
             ]
         },
         {
@@ -38,7 +39,7 @@
             "nome": "Marcelo Hamilton",
             "email": "marcelo@gmail.com",
             "generos": [
-                "Gospel"
+                "Rock"
             ],
             "instrumentos": [
                 "Guitarra"
@@ -48,10 +49,10 @@
             "nome": "Cristina Correia",
             "email": "cristina@gmail.com",
             "generos": [
-                "Samba"
+                "Rock"
             ],
             "instrumentos": [
-                "Violao"
+                "Baixo"
             ]
         },
         {
@@ -74,6 +75,18 @@
             "instrumentos": [
                 "Pandeiro",
                 "Cavaquinho"
+            ]
+        },
+        {
+            "nome": "Abenezio Freitas",
+            "email": "abenezio@gmail.com",
+            "generos": [
+                "Rock",
+                "Pop"
+            ],
+            "instrumentos": [
+                "Guitarra",
+                "Bateria"
             ]
         }
     ]
